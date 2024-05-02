@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./public/style.css">
+    <title>OpenBoard</title>
+</head>
+<body>
+    <div class="menu-cont">
+        <span class="material-icons">menu</span>
+        <!-- <span class="material-icons">close</span> -->
+    </div>
+    <div class="tools-cont scale-tools-cont">
+        <img class="Pencil" src="./public/Icons/Pencil.svg">
+        <img class="Eraser" src="./public/Icons/Eraser.svg">
+        <img class="Download" src="./public/Icons/Download.svg">
+        <img class="Upload" src="./public/Icons/Upload.svg">
+        <img class="StickyNote" src="./public/Icons/StickyNote.svg">
+        <img class="Redo" src="./public/Icons/Redo.svg">
+        <img class="Undo" src="./public/Icons/Undo.svg">
+        <img class="favicon" src="./public/Icons/favicon.ico">
+    </div>
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input class="pencil-width" type="range" min="2" max="6" value="3">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="green pencil-color"></div>
+            <div class="blue pencil-color"></div>
+            <div class="yellow pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-width-cont">
+        <input class="eraser-width" type="range" min="2" max="6" value="3">
+    </div>
+    <!-- <div class="sticky-notes-cont">
+        <div class="header-cont">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="note-cont">
+            <textarea spellcheck="false" class="SN-textarea"></textarea>
+        </div>
+    </div> -->
+    <canvas></canvas>
+    <!-- To connect to socket using socket IO CDN -->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script>
+        // this step is being manually done when opening localhost from browser, we can open
+        //as many connections we want from browser.
+        let socket = io.connect("http://localhost:3000/");
+    </script>
+    <script src="./public/tools.js"></script>
+    <script src="./public/canvas.js"></script>
+</body>
+</html>

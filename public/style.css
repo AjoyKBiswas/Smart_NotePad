@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.menu-cont:hover{
+    cursor: pointer;
+}
+.menu-cont {
+    height: 2rem;
+    width: 2rem;
+    background-color: gray;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    /* font-size: 4rem; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.tools-cont > *:hover{
+    cursor: pointer;
+}
+.tools-cont > *{
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    background-color: darkgray;
+    border-radius: 10%;
+    /* align-items: center; */
+}
+.tools-cont {
+    height: 3rem;
+    width: 20rem;
+    display: flex;
+    background-color: lightgray;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    left: calc((100vw - 20rem)/2);
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.tools-cont:hover {
+    cursor: move;
+}
+.pencil-width-cont > *:hover{
+    cursor: pointer;
+}
+.pencil-color-cont > *:hover{
+    cursor: pointer;
+}
+.pencil-tool-cont:hover{
+    cursor: move;
+}
+.pencil-tool-cont {
+    /* by default it should be hidden, on clicking the eraser-tool, will have to be set to flex to be visible */
+    display: none;
+    height: 4rem;
+    /* pencil-width-cont + pencil-color-cont = 1.5rem + 2.5rem = 4rem */
+    width: 10rem;
+    position: absolute;
+    top: calc(3rem + 1rem);
+    /* reaching centre, then placing at left of pencil icon. 20rem is width of tools-cont, 8rem is for pencil-tool-cont */
+    left: calc(((100vw - 20rem)/2) - 8rem);
+    background-color: lightblue;
+    /* border: 1px solid black; */
+}
+.pencil-width-cont {
+    /* background-color: lightblue; */
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+.pencil-color-cont {
+    height: 2.5rem;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pencil-color {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 25%;
+    /* border: 1px solid black; */
+}
+.black {
+    background-color: black;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.eraser-width-cont {
+    height: 1.5rem;
+    width: 8rem;
+    /* by default it should be hidden, on clicking the eraser-tool, will have to be set to flex to be visible */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    position: absolute;
+    top: calc(3rem + 1rem);
+    /* reaching centre, then placing at left of pencil icon. 20rem is width of tools-cont, 3rem is for distinguishing */
+    left: calc(((100vw - 20rem)/2) + 3rem);
+    background-color: lightblue;
+}
+.eraser-width-cont:hover{
+    cursor: pointer;
+}
+.scale-tools-cont {
+    animation-name: scale-tools-cont;
+    animation-duration: 1s;
+}
+@keyframes scale-tools-cont {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.sticky-notes-cont {
+    height: 10rem;
+    width: 10rem;
+    /* background-color: lightgoldenrodyellow; */
+    left: calc((100vw - 10rem)/2);
+    top: calc((100vh - 10rem)/2);
+    position: absolute;
+}
+.header-cont {
+    height: 1.5rem;
+    width: 10rem;
+    background-color: darkgray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.header-cont:hover {
+    cursor: move;
+}
+.header-cont > * {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.header-cont > *:hover{
+    cursor: pointer;
+}
+.minimize {
+    background-color: green;
+}
+.remove {
+    background-color: red;
+}
+.note-cont {
+    height: calc(100% - 1.5rem);
+    width: 10rem;
+    background-color: lightgray;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.SN-textarea {
+    height: 100%;
+    width: 10rem;
+    border: none;
+    resize: none;
+}
